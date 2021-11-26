@@ -283,7 +283,7 @@ impl<F: FindAuthor<u32>> FindAuthor<H160> for FindAuthorTruncated<F> {
 }
 
 parameter_types! {
-	pub const ChainId: u64 = 42;
+	pub const ChainId: u64 = 201;
 	pub BlockGasLimit: U256 = U256::from(u32::max_value());
 }
 
