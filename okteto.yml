@@ -1,0 +1,27 @@
+name: diosa
+image: rust:1.59.0
+command: bash
+workdir: '/usr/src/app'
+volumes:
+- /usr/local/cargo/registry
+- /home/root/app/target
+sync:
+- .:/usr/src/app
+remote: 22003
+resources:
+  requests:
+    memory: "4Gi"
+    cpu: "2500m"
+  limits:
+    memory: "4Gi"
+    cpu: "2500m"
+
+persistentVolume:
+  enabled: true
+  storageClass: standard
+  size: 3.5Gi
+
+forward:
+   - 9615:9615
+   - 9944:9944
+
